@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-site": {
+    "clone-discord": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-site",
+            "outputPath": "dist/clone-discord",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-site:build:production"
+              "buildTarget": "clone-discord:build:production"
             },
             "development": {
-              "buildTarget": "my-site:build:development"
+              "buildTarget": "clone-discord:build:development"
             }
           },
           "defaultConfiguration": "development"
