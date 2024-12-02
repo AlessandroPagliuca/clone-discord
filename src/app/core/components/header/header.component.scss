@@ -1,6 +1,21 @@
-header{
-    height: 80px;
+header {
+  height: 80px;
+
+  .off-canvas {
+    z-index: 100;
+    padding-top: 80px;
+    position: absolute;
+    top: 1;
+    right: 0;
+    width: 322px;
+    height: 100%;
+    background-color: #ffff;
+    flex-direction: column;
+    border-top-left-radius: 10px;
+    border: 1px solid grey;
+  }
 }
-.test{
-    border: 1px solid black;
+
+.hamburger-menu {
+  z-index: 101;
 }
