@@ -3,7 +3,7 @@ header {
 
   .off-canvas {
     z-index: 100;
-    padding-top: 80px;
+    padding-top: 28px;
     position: absolute;
     top: 1;
     right: 0;
@@ -14,8 +14,22 @@ header {
     border-top-left-radius: 10px;
     border: 1px solid grey;
   }
-}
+  .m-link {
+    margin-top: 52px;
+  }
+  .hamburger-menu {
+    z-index: 101;
+  }
 
-.hamburger-menu {
-  z-index: 101;
+  .navbar-links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .white-icon {
+    color: white;
+  }
+  .black-icon {
+    color: black;
+  }
 }

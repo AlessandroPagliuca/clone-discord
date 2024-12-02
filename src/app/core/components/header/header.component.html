@@ -1,23 +1,36 @@
 <header class="test d-flex justify-content-center align-items-stretch">
     <nav class="container-lg row justify-content-between test" [ngClass]="{'align-items-center': !isMenuOpen}">
-        <!--logo-->
+        <!--logo nav-->
         <div class="col-6 col-lg-2 bg-danger align-self-center">
             LOGO
         </div>
-        <!--hamburger menu-->
-        <div class="col-6 d-flex justify-content-end align-items-center d-block d-lg-none ">
-            <button mat-icon-button (click)="toggleMenu()" [ngClass]="{'hamburger-menu': isMenuOpen}">
-                <mat-icon>{{ isMenuOpen ? "close" : "menu" }}</mat-icon>
-            </button>
+        <!--btn hamburger menu-->
+        <div class="col-6 d-flex justify-content-end align-items-center d-block d-lg-none"
+            [ngClass]="{'hamburger-menu': isMenuOpen}">
+            <div class="row justify-content-end align-items-center">
+                <div class="col-12">
+                    <button mat-icon-button (click)="toggleMenu()">
+                        <mat-icon [ngClass]="{'black-icon': isMenuOpen, 'white-icon': !isMenuOpen}">{{ isMenuOpen ?
+                            "close" : "menu" }}</mat-icon>
+                    </button>
+                </div>
+            </div>
         </div>
         <div class="d-lg-block" [ngClass]="{'col-12 d-block off-canvas': isMenuOpen, 'col-lg-10 d-none': !isMenuOpen }">
             <div class="row" [ngClass]="{'justify-content-between': !isMenuOpen}">
-                <!--LOGO-->
-                <div>LOGO</div>
+                <!--logo off-canvas-->
+                <div class="col-6" [ngClass]="{'d-none': !isMenuOpen}">logo</div>
                 <!--links-->
-                <div class="col-lg-10 bg-warning" [ngClass]="{'order-2 col-12': isMenuOpen}">LINKS</div>
+                <div class="col-lg-10 bg-warning" [ngClass]="{'order-2 col-12': isMenuOpen}">
+                    <ul class="row navbar-links align-items-center h-100">
+                        @for (link of linksArrayForTest; track $index) {
+                        <li [ngClass]="{'col-12 p-3': isMenuOpen, 'col text-center': !isMenuOpen}">{{link.link}}
+                        </li>
+                        }
+                    </ul>
+                </div>
                 <!--btn login-->
-                <div class="col-lg-2 bg-success" [ngClass]="{'order-1 col-12': isMenuOpen}">
+                <div class="col-lg-2 bg-success" [ngClass]="{'order-1 col-12 m-link': isMenuOpen}">
                     LOGIN
                 </div>
             </div>

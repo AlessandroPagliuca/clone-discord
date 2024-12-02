@@ -14,6 +14,36 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 export class HeaderComponent {
   protected isMenuOpen: boolean = false;
 
+  protected linksArrayForTest: any = [
+    {
+      routePage: 'http://',
+      link: 'Download'
+    },
+    {
+      routePage: 'http://',
+      link: 'Nitro'
+    },
+    {
+      routePage: 'http://',
+      link: 'Quests'
+    },
+    {
+      routePage: 'http://',
+      link: 'Safety'
+    },
+    {
+      routePage: 'http://',
+      link: 'Support'
+    },
+    {
+      routePage: 'http://',
+      link: 'Blog'
+    },
+    {
+      routePage: 'http://',
+      link: 'Careers'
+    },
+  ]
   constructor(private breakpointObserver: BreakpointObserver) {
     // detect screen size changes
     this.breakpointObserver.observe([
@@ -29,5 +59,4 @@ export class HeaderComponent {
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
-
 }
