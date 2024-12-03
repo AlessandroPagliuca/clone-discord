@@ -2,11 +2,11 @@
     <nav class="container-lg row justify-content-between test" [ngClass]="{'align-items-center': !isMenuOpen}">
         <!--logo nav-->
         <div class="col-6 col-lg-2 align-self-center">
-            <img class="logo-lg-fit" src="assets/img/logoWhite.png" alt="discord logo">
+            <img class="logo-lg-fit" src="assets/img/logoWhite.png" alt="discord logo-white">
         </div>
         <!--btn hamburger menu-->
-        <div class="col-6 d-flex justify-content-end align-items-center d-block d-lg-none"
-            [ngClass]="{'hamburger-menu slideInRight': isMenuOpen}">
+        <div class="col-6 d-flex justify-content-end align-items-center hamburger-menu d-block d-lg-none"
+            [ngClass]="{'slideInRight': isMenuOpen}">
             <div class="row justify-content-end align-items-center">
                 <div class="col-12">
                     <button mat-icon-button (click)="toggleMenu()">
@@ -22,7 +22,7 @@
             <div class="row" [ngClass]="{'justify-content-between': !isMenuOpen}">
                 <!--logo off-canvas-->
                 <div class="col-6" [ngClass]="{'d-none': !isMenuOpen}">
-                    <img class="logo" src="assets/img/logoBlack.png" alt="discord logo">
+                    <img class="logo" src="assets/img/logoBlack.png" alt="discord logo-dark">
                 </div>
                 <!--links-->
                 <div class="col-lg-10" [ngClass]="{'col-12': isMenuOpen}">
