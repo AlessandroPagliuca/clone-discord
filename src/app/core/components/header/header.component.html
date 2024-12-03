@@ -6,17 +6,19 @@
         </div>
         <!--btn hamburger menu-->
         <div class="col-6 d-flex justify-content-end align-items-center d-block d-lg-none"
-            [ngClass]="{'hamburger-menu': isMenuOpen}">
+            [ngClass]="{'hamburger-menu slideInRight': isMenuOpen}">
             <div class="row justify-content-end align-items-center">
                 <div class="col-12">
                     <button mat-icon-button (click)="toggleMenu()">
-                        <mat-icon [ngClass]="{'black-icon': isMenuOpen, 'white-icon': !isMenuOpen}">{{ isMenuOpen ?
-                            "close" : "menu" }}</mat-icon>
+                        <mat-icon [ngClass]="{'black-icon': isMenuOpen, 'white-icon': !isMenuOpen}">
+                            {{ isMenuOpen ? "close" : "menu" }}
+                        </mat-icon>
                     </button>
                 </div>
             </div>
         </div>
-        <div class="d-lg-block" [ngClass]="{'col-12 d-block off-canvas': isMenuOpen, 'col-lg-10 d-none': !isMenuOpen }">
+        <div class="d-lg-block"
+            [ngClass]="{'col-12 d-block off-canvas slideInRight': isMenuOpen, 'col-lg-10 d-none': !isMenuOpen }">
             <div class="row" [ngClass]="{'justify-content-between': !isMenuOpen}">
                 <!--logo off-canvas-->
                 <div class="col-6" [ngClass]="{'d-none': !isMenuOpen}">
