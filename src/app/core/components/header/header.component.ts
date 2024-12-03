@@ -3,7 +3,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
-
+import { LinkNavbar } from '../../../shared/models/linkNavbar';
 @Component({
   selector: 'app-header',
   imports: [MatIconModule, MatButtonModule, CommonModule],
@@ -14,7 +14,7 @@ import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 export class HeaderComponent {
   protected isMenuOpen: boolean = false;
 
-  protected linksArrayForTest: any = [
+  protected linksArrayForTest: LinkNavbar[] = [
     {
       routePage: 'http://',
       link: 'Download'

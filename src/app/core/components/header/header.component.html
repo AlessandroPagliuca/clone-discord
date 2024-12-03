@@ -1,8 +1,8 @@
 <header class="test d-flex justify-content-center align-items-stretch">
     <nav class="container-lg row justify-content-between test" [ngClass]="{'align-items-center': !isMenuOpen}">
         <!--logo nav-->
-        <div class="col-6 col-lg-2 bg-danger align-self-center">
-            LOGO
+        <div class="col-6 col-lg-2 align-self-center">
+            <img class="logo-lg-fit" src="assets/img/logoWhite.png" alt="discord logo">
         </div>
         <!--btn hamburger menu-->
         <div class="col-6 d-flex justify-content-end align-items-center d-block d-lg-none"
@@ -19,19 +19,22 @@
         <div class="d-lg-block" [ngClass]="{'col-12 d-block off-canvas': isMenuOpen, 'col-lg-10 d-none': !isMenuOpen }">
             <div class="row" [ngClass]="{'justify-content-between': !isMenuOpen}">
                 <!--logo off-canvas-->
-                <div class="col-6" [ngClass]="{'d-none': !isMenuOpen}">logo</div>
+                <div class="col-6" [ngClass]="{'d-none': !isMenuOpen}">
+                    <img class="logo" src="assets/img/logoBlack.png" alt="discord logo">
+                </div>
                 <!--links-->
-                <div class="col-lg-10 bg-warning" [ngClass]="{'order-2 col-12': isMenuOpen}">
+                <div class="col-lg-10" [ngClass]="{'col-12': isMenuOpen}">
                     <ul class="row navbar-links align-items-center h-100">
                         @for (link of linksArrayForTest; track $index) {
-                        <li [ngClass]="{'col-12 p-3': isMenuOpen, 'col text-center': !isMenuOpen}">{{link.link}}
+                        <li [ngClass]="{'col-12 p-3 text-black': isMenuOpen, 'col text-center': !isMenuOpen}">
+                            {{link.link}}
                         </li>
                         }
                     </ul>
                 </div>
                 <!--btn login-->
-                <div class="col-lg-2 bg-success" [ngClass]="{'order-1 col-12 m-link': isMenuOpen}">
-                    LOGIN
+                <div class="col-lg-2 d-flex justify-content-center" [ngClass]="{'col-12 m-link': isMenuOpen}">
+                    <button class="text-black w-75" mat-raised-button>Login</button>
                 </div>
             </div>
         </div>

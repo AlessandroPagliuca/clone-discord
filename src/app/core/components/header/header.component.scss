@@ -1,9 +1,9 @@
 header {
-  height: 80px;
+  height: 90px;
 
   .off-canvas {
     z-index: 100;
-    padding-top: 28px;
+    padding-top: 8px;
     position: absolute;
     top: 1;
     right: 0;
@@ -14,22 +14,44 @@ header {
     border-top-left-radius: 10px;
     border: 1px solid grey;
   }
+
   .m-link {
-    margin-top: 52px;
+    margin-top: 50px;
   }
+
   .hamburger-menu {
     z-index: 101;
   }
 
   .navbar-links {
     list-style: none;
-    padding: 0;
+
+    li {
+      cursor: pointer;
+
+      &:hover {
+        color: rgb(128, 126, 126) !important;
+      }
+    }
   }
 
   .white-icon {
     color: white;
   }
+
   .black-icon {
     color: black;
+  }
+
+  .logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .logo-lg-fit {
+    width: 100%;
+    height: 30px;
+    object-fit: contain;
   }
 }
