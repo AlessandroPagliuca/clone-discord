@@ -1,44 +1,52 @@
-<header class="test d-flex justify-content-center align-items-stretch">
-    <nav class="container-lg row justify-content-between test" [ngClass]="{'align-items-center': !isMenuOpen}">
-        <!--logo nav-->
-        <div class="col-6 col-lg-2 align-self-center">
-            <img class="logo-lg-fit" src="assets/img/logoWhite.png" alt="discord logo-white">
+<header class="container-fluid">
+    <nav class=" row justify-content-center align-items-center">
+        <div class="col-6 col-lg-2 d-flex align-items-center">
+            <img class="logo-left" [ngClass]="{'d-none': isMenuOpen}" src="assets/img/logoWhite.png"
+                alt="discord logo-white">
         </div>
-        <!--btn hamburger menu-->
-        <div class="col-6 d-flex justify-content-end align-items-center hamburger-menu d-block d-lg-none"
-            [ngClass]="{'slideInRight': isMenuOpen}">
-            <div class="row justify-content-end align-items-center">
-                <div class="col-12">
-                    <button mat-icon-button (click)="toggleMenu()">
-                        <mat-icon [ngClass]="{'black-icon': isMenuOpen, 'white-icon': !isMenuOpen}">
-                            {{ isMenuOpen ? "close" : "menu" }}
-                        </mat-icon>
-                    </button>
-                </div>
+        <div class="col-6 d-lg-none">
+            <div class="d-flex justify-content-end d-lg-none">
+                <button mat-icon-button [ngClass]="{'slideInRight btn-hamburger': isMenuOpen}" (click)="toggleMenu()">
+                    <mat-icon [ngClass]="{'black-icon': isMenuOpen, 'white-icon': !isMenuOpen}">
+                        {{ isMenuOpen ? "close" : "menu" }}
+                    </mat-icon>
+                </button>
             </div>
         </div>
-        <div class="d-lg-block"
-            [ngClass]="{'col-12 d-block off-canvas slideInRight': isMenuOpen, 'col-lg-10 d-none': !isMenuOpen }">
-            <div class="row" [ngClass]="{'justify-content-between': !isMenuOpen}">
-                <!--logo off-canvas-->
-                <div class="col-6" [ngClass]="{'d-none': !isMenuOpen}">
-                    <img class="logo" src="assets/img/logoBlack.png" alt="discord logo-dark">
-                </div>
-                <!--links-->
-                <div class="col-lg-10" [ngClass]="{'col-12': isMenuOpen}">
-                    <ul class="row navbar-links align-items-center h-100">
-                        @for (link of linksArrayForTest; track $index) {
-                        <li [ngClass]="{'col-12 p-3 text-black': isMenuOpen, 'col text-center': !isMenuOpen}">
-                            {{link.link}}
-                        </li>
-                        }
-                    </ul>
-                </div>
-                <!--btn login-->
-                <div class="col-lg-2 d-flex justify-content-center" [ngClass]="{'col-12 m-link': isMenuOpen}">
-                    <button class="text-black login-btn w-75" mat-raised-button>Login</button>
-                </div>
-            </div>
+        <div class="col-lg-8 d-flex justify-content-center align-items-stretch d-none d-lg-block">
+            <ul class="d-flex align-items-center navbar-links">
+                @for (link of linksArrayForTest; track $index) {
+                <li class="col text-center pt-3">
+                    <p>{{link.link}}</p>
+
+                </li>
+                }
+            </ul>
+        </div>
+        <div class="col-lg-2 d-none d-lg-block">
+            <button class="text-black login-btn w-50" mat-raised-button>Login</button>
         </div>
     </nav>
+    <aside class="row flex-column d-lg-none g-0 off-canvas pt-2"
+        [ngClass]="{'slideOutRight': !isMenuOpen, 'slideInRight': isMenuOpen}">
+        <div class="col-12 mb-2">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-8">
+                    <img class="img-aside" src="assets/img/logoBlack.png" alt="discord logo-dark">
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <ul class="row flex-column navbar-links g-0">
+                @for (link of linksArrayForTest; track $index) {
+                <li class="col-4 p-3 text-black">
+                    {{link.link}}
+                </li>
+                }
+            </ul>
+        </div>
+        <div class="col-12 d-flex pt-4 justify-content-center m-link">
+            <button class="text-black login-btn w-75" mat-raised-button>Login</button>
+        </div>
+    </aside>
 </header>
