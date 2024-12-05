@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { BreakpointObserver, BreakpointState } from '@angular/cdk/layout';
 import { LinkNavbar } from '../../../shared/models/linkNavbar';
+import { MaterialModule } from '../../../shared/material.module';
 @Component({
   selector: 'app-header',
-  imports: [MatIconModule, MatButtonModule, CommonModule],
+  imports: [MaterialModule, CommonModule],
   standalone: true,
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

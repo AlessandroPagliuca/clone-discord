@@ -5,7 +5,7 @@
                 alt="discord logo-white">
         </div>
         <div class="col-6 d-lg-none">
-            <div class="d-flex justify-content-end d-lg-none">
+            <div class="d-flex d-block justify-content-end d-lg-none">
                 <button mat-icon-button [ngClass]="{'slideInRight btn-hamburger': isMenuOpen}" (click)="toggleMenu()">
                     <mat-icon [ngClass]="{'black-icon': isMenuOpen, 'white-icon': !isMenuOpen}">
                         {{ isMenuOpen ? "close" : "menu" }}
@@ -18,7 +18,6 @@
                 @for (link of linksArrayForTest; track $index) {
                 <li class="col text-center pt-3">
                     <p>{{link.link}}</p>
-
                 </li>
                 }
             </ul>
