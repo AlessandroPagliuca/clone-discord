@@ -12,6 +12,7 @@ import { MaterialModule } from '../../../shared/material.module';
 })
 export class HeaderComponent {
   protected isMenuOpen: boolean = false;
+  protected isSlideOutRight: boolean = false;
 
   protected linksArrayForTest: LinkNavbar[] = [
     {
@@ -50,6 +51,7 @@ export class HeaderComponent {
     ]).subscribe((result: BreakpointState) => {
       if (result.matches) {
         this.isMenuOpen = false;
+        this.isSlideOutRight = false;
       } else {
         this.isMenuOpen = false;
       }
@@ -57,5 +59,7 @@ export class HeaderComponent {
   }
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    this.isSlideOutRight = true;
+    console.log('menu', this.isMenuOpen);
   }
 }
